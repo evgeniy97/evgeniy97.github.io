@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=90051322">
+    <script src="../assets/script.js?t=93f1a66c"></script>
+    <title>Get Started - Project Gen42</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Project Gen42</a>
+              </li>
+              <li class="menu-item -level-1"><a class="link title  link-showcase" href="../showcase.html">Philosophy of project</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Getting started</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-getting-startedquickstart" href="../getting-started/quickstart.html">Quick-start guide</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Data Generation</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-datageneratordatagenerator" href="../datagenerator/datagenerator.html">Get Started</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Neural Network module</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><span class="title">Get Started</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Visualization</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><span class="title">Get Started</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Additional functionality</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title -active link-utilityutility" href="../utility/utility.html">Get Started</a>
+                    <ul class="headings heading-list">
+                      <li class="heading-item -depth-2"><a class="hlink link-utility-or-additional-funtional" href="#utility-or-additional-funtional">Utility or additional funtional</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Development</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-developmentdevelopment" href="../development/development.html">Get Started</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-utilityutility">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h2 id="utility-or-additional-funtional">Utility or additional funtional</h2>
+<p>We just provide some basic metrics and base interface to add new metric now, but if you nee some more specify functionality ypu are wlcome to addres ypur suggeest to us.</p>
+<h1 id="comparison-function">Comparison function</h1>
+<p>We provie base class model:</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="pl-k">class</span> <span class="pl-ent">baseSravnyator</span>:</span>
+    <span class="hljs-function"><span class="pl-k">def</span> <span class="pl-ent">__init__</span><span class="hljs-params">(self, function)</span> -&gt; <span class="pl-k">None</span>:</span>
+        self.function = function
+        
+    <span class="pl-c">## @staticmethod</span>
+    <span class="hljs-function"><span class="pl-k">def</span> <span class="pl-ent">__call__</span><span class="hljs-params">(self, *arg)</span> -&gt; tp.Union[int, float, list]:</span>
+        <span class="pl-k">return</span> self.function(*arg)
+</code></pre>
+<p>You can use this as:</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="pl-k">def</span> <span class="pl-ent">f</span><span class="hljs-params">(a,b)</span>:</span>
+    <span class="pl-k">return</span> (a+b)/<span class="hljs-number">2</span>
+
+<span class="hljs-function"><span class="pl-k">def</span> <span class="pl-ent">g</span><span class="hljs-params">(l)</span>:</span>
+    <span class="pl-k">return</span> sum(l) 
+
+sr_f = baseSravnyator(f)
+sr_g = baseSravnyator(g)
+
+sr_f(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="pl-c"># -&gt; 2.5</span>
+sr_g([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="pl-c"># -&gt; 6</span>
+</code></pre>
+<p>Or you can use pre-implemented MSE,MAE or KL functions:</p>
+<pre><code class="lang-python">mse = MSESravnyator()
+mse([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>]) <span class="pl-c"># -&gt; 2.0</span>
+
+mae = MAESravnyator()
+mae([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>]) <span class="pl-c"># -&gt; 1.33333</span>
+
+kl = KLSravnyator()
+
+values1 = [<span class="hljs-number">1.346112</span>,<span class="hljs-number">1.337432</span>,<span class="hljs-number">1.246655</span>]
+values2 = [<span class="hljs-number">1.033836</span>,<span class="hljs-number">1.082015</span>,<span class="hljs-number">1.117323</span>]
+
+kl(values1, values2) <span class="pl-c"># -&gt; 0.7752796240788413</span>
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../datagenerator/datagenerator.html"><span class="title">Get Started</span></a></div>
+          <div class="right"><a href="../development/development.html"><span class="label">Next: </span><span class="title">Get Started</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
