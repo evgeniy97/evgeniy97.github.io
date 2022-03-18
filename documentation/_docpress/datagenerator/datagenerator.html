@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=90051322">
+    <script src="../assets/script.js?t=93f1a66c"></script>
+    <title>Get Started - Project Gen42</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Project Gen42</a>
+              </li>
+              <li class="menu-item -level-1"><a class="link title  link-showcase" href="../showcase.html">Philosophy of project</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Getting started</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-getting-startedquickstart" href="../getting-started/quickstart.html">Quick-start guide</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Data Generation</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title -active link-datageneratordatagenerator" href="../datagenerator/datagenerator.html">Get Started</a>
+                    <ul class="headings heading-list">
+                      <li class="heading-item -depth-2"><a class="hlink link-data-generator" href="#data-generator">Data generator</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-easy-start" href="#easy-start">Easy start</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-demographic-history" href="#demographic-history">Demographic history</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-generator" href="#generator">Generator</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Neural Network module</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><span class="title">Get Started</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Visualization</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><span class="title">Get Started</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Additional functionality</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-utilityutility" href="../utility/utility.html">Get Started</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Development</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-developmentdevelopment" href="../development/development.html">Get Started</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-datageneratordatagenerator">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h2 id="data-generator">Data generator</h2>
+<p>We consider that both machine learning and popuation genomics are data-first fields of scince. So we stress out how we generate data (as far as we cannot use real data).</p>
+<p>As core we use msprime generator [1] and provide some wrapper on it.</p>
+<h2 id="easy-start">Easy start</h2>
+<p>The easiet way to generaate some data is following:</p>
+<pre><code class="lang-python">
+from ??? import *
+
+# generate demographics evevents structure 
+demographics_evevents = generate_demographic_events_complex(12000, random_seed=47)
+
+DG = DataGenerator(demographic_events=demographics_evevents)
+
+for mutations, d_times, prior_dist in DG:
+    pass # do whatever you want
+
+print(mutations[:100], d_times[:100], prior_dist)
+&gt;&gt; [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] [0.25771900000000003, 0.05625199999999999, 0.019091, 0.06374333333333333, 0.19882266666666665, 0.03460433333333332, 0.03325966666666667, 0.011786333333333334, 0.016540666666666665, 0.021863999999999995, 0.017948333333333334, 0.02438633333333334, 0.010525666666666668, 0.03543433333333334, 0.010777999999999998, 0.008822333333333335, 0.052617, 0.11978399999999996, 0.005343999999999999, 0.0006770000000000001]
+</code></pre>
+<p>so, the output of DataGenerator is mutations (0 for not mutatation in a locus), actual discreted coaleescentee time and prior colescent time distribution.</p>
+<h2 id="demographic-history">Demographic history</h2>
+<p>As we show adove, you can generate random  demographics evevents by using generate_demographic_events_complex function:</p>
+<pre><code class="lang-python">generate_demographic_events_complex(int: population, int: random_seed) -&gt; msprime.Demography
+population: int - is the initial population size
+
+output:
+    msprime.Demography object
+</code></pre>
+<p>or you can initialize msprime.Demography object from two list:</p>
+<pre><code class="lang-python">
+demographics_evevents(List[int]: time, List[int]: population_sizes, int: random_seed) -&gt; msprime.Demography
+
+
+demographics_evevents = generate_demography_from_list(
+    [1_000, 2_000, 3_000, 4_000, 5_000, 6_000 ],
+    [100, 1000, 100, 1_000, 500, 1_000]
+)
+
+</code></pre>
+<p>If you are familiar with msprime you can create demographics_evevents as usual</p>
+<p>some tip for visualization:</p>
+<pre><code class="lang-python">
+debug = generate_demography_from_list(
+    [<span class="hljs-number">1</span>_000, <span class="hljs-number">2</span>_000, <span class="hljs-number">3</span>_000, <span class="hljs-number">4</span>_000, <span class="hljs-number">5</span>_000, <span class="hljs-number">6</span>_000 ],
+    [<span class="hljs-number">100</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1</span>_000, <span class="hljs-number">500</span>, <span class="hljs-number">1</span>_000]
+).debug()
+
+t = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>_000, num=<span class="hljs-number">20</span>)
+S = debug.population_size_trajectory(t)
+plt.step(t, S, label=<span class="pl-s">&quot;Population&quot;</span>)
+plt.xlabel(<span class="pl-s">&quot;Time ago&quot;</span>)
+plt.ylabel(<span class="pl-s">&quot;Population size&quot;</span>)
+plt.legend()
+</code></pre>
+<h2 id="generator">Generator</h2>
+<pre><code class="lang-python">DG = DataGenerator(demographic_events=demographics_evevents)
+
+<span class="pl-k">for</span> mutations, d_times, prior_dist <span class="pl-k">in</span> DG:
+    <span class="pl-k">pass</span> <span class="pl-c"># do whatever you want</span>
+
+print(mutations[:<span class="hljs-number">100</span>], d_times[:<span class="hljs-number">100</span>], prior_dist)
+&gt;&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>] [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>] [<span class="hljs-number">0.25771900000000003</span>, <span class="hljs-number">0.05625199999999999</span>, <span class="hljs-number">0.019091</span>, <span class="hljs-number">0.06374333333333333</span>, <span class="hljs-number">0.19882266666666665</span>, <span class="hljs-number">0.03460433333333332</span>, <span class="hljs-number">0.03325966666666667</span>, <span class="hljs-number">0.011786333333333334</span>, <span class="hljs-number">0.016540666666666665</span>, <span class="hljs-number">0.021863999999999995</span>, <span class="hljs-number">0.017948333333333334</span>, <span class="hljs-number">0.02438633333333334</span>, <span class="hljs-number">0.010525666666666668</span>, <span class="hljs-number">0.03543433333333334</span>, <span class="hljs-number">0.010777999999999998</span>, <span class="hljs-number">0.008822333333333335</span>, <span class="hljs-number">0.052617</span>, <span class="hljs-number">0.11978399999999996</span>, <span class="hljs-number">0.005343999999999999</span>, <span class="hljs-number">0.0006770000000000001</span>]
+</code></pre>
+<pre><code class="lang-python">class DataGenerator(self,
+                 recombination_rate: float = RHO_HUMAN,
+                 mutation_rate: float = MU_HUMAN,
+                 demographic_events: list = None,
+                 population: int = None,
+                 number_intervals: int = N,
+                 splitter=simple_split,
+                 num_replicates: int = 1,
+                 lengt: int = L_HUMAN,
+                 model: str = &quot;hudson&quot;,
+                 random_seed: int = 42,
+                 mutation_random_seed: int = 42,
+                 sample_size: int = 1,
+                 )
+</code></pre>
+<hr>
+<p>[1] Jerome Kelleher, Alison M Etheridge and Gilean McVean (2016), Efficient Coalescent Simulation and Genealogical Analysis for Large Sample Sizes, PLOS Comput Biol 12(5): e1004842. doi: 10.1371/journal.pcbi.1004842</p>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../getting-started/quickstart.html"><span class="title">Quick-start guide</span></a></div>
+          <div class="right"><a href="../utility/utility.html"><span class="label">Next: </span><span class="title">Get Started</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

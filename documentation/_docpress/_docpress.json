@@ -1,0 +1,272 @@
+{
+  "toc": {
+    "sections": [
+      {
+        "title": "Project Gen42",
+        "source": "README.md",
+        "url": "index.html",
+        "slug": "index",
+        "headings": [
+          {
+            "title": "Table of Contents",
+            "depth": 2,
+            "id": "table-of-contents"
+          },
+          {
+            "title": "What is it",
+            "depth": 2,
+            "id": "what-is-it"
+          },
+          {
+            "title": "Usage",
+            "depth": 2,
+            "id": "usage"
+          },
+          {
+            "title": "Examples",
+            "depth": 2,
+            "id": "examples"
+          },
+          {
+            "title": "Support",
+            "depth": 2,
+            "id": "support"
+          },
+          {
+            "title": "Citation",
+            "depth": 2,
+            "id": "citation"
+          }
+        ]
+      },
+      {
+        "title": "Philosophy of project",
+        "source": "docs/showcase.md",
+        "url": "showcase.html",
+        "slug": "showcase"
+      },
+      {
+        "title": "Getting started",
+        "sections": [
+          {
+            "title": "Quick-start guide",
+            "source": "docs/getting-started/quickstart.md",
+            "url": "getting-started/quickstart.html",
+            "slug": "getting-startedquickstart",
+            "headings": [
+              {
+                "title": "Usage",
+                "depth": 2,
+                "id": "usage"
+              },
+              {
+                "title": "Examples",
+                "depth": 2,
+                "id": "examples"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Generation",
+        "sections": [
+          {
+            "title": "Get Started",
+            "source": "docs/datagenerator/datagenerator.md",
+            "url": "datagenerator/datagenerator.html",
+            "slug": "datageneratordatagenerator",
+            "headings": [
+              {
+                "title": "Data generator",
+                "depth": 2,
+                "id": "data-generator"
+              },
+              {
+                "title": "Easy start",
+                "depth": 2,
+                "id": "easy-start"
+              },
+              {
+                "title": "Demographic history",
+                "depth": 2,
+                "id": "demographic-history"
+              },
+              {
+                "title": "Generator",
+                "depth": 2,
+                "id": "generator"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Neural Network module",
+        "sections": [
+          {
+            "title": "Get Started",
+            "source": ""
+          }
+        ]
+      },
+      {
+        "title": "Visualization",
+        "sections": [
+          {
+            "title": "Get Started",
+            "source": ""
+          }
+        ]
+      },
+      {
+        "title": "Additional functionality",
+        "sections": [
+          {
+            "title": "Get Started",
+            "source": "docs/utility/utility.md",
+            "url": "utility/utility.html",
+            "slug": "utilityutility",
+            "headings": [
+              {
+                "title": "Utility or additional funtional",
+                "depth": 2,
+                "id": "utility-or-additional-funtional"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Development",
+        "sections": [
+          {
+            "title": "Get Started",
+            "source": "docs/development/development.md",
+            "url": "development/development.html",
+            "slug": "developmentdevelopment"
+          }
+        ]
+      }
+    ]
+  },
+  "index": {
+    "index.html": {
+      "source": "README.md",
+      "title": "Project Gen42",
+      "pageTitle": "Project Gen42",
+      "slug": "index",
+      "headings": [
+        {
+          "title": "Table of Contents",
+          "depth": 2,
+          "id": "table-of-contents"
+        },
+        {
+          "title": "What is it",
+          "depth": 2,
+          "id": "what-is-it"
+        },
+        {
+          "title": "Usage",
+          "depth": 2,
+          "id": "usage"
+        },
+        {
+          "title": "Examples",
+          "depth": 2,
+          "id": "examples"
+        },
+        {
+          "title": "Support",
+          "depth": 2,
+          "id": "support"
+        },
+        {
+          "title": "Citation",
+          "depth": 2,
+          "id": "citation"
+        }
+      ]
+    },
+    "showcase.html": {
+      "source": "docs/showcase.md",
+      "title": "Philosophy of project - Project Gen42",
+      "pageTitle": "Philosophy of project",
+      "slug": "showcase"
+    },
+    "getting-started/quickstart.html": {
+      "source": "docs/getting-started/quickstart.md",
+      "title": "Quick-start guide - Project Gen42",
+      "pageTitle": "Quick-start guide",
+      "slug": "getting-startedquickstart",
+      "headings": [
+        {
+          "title": "Usage",
+          "depth": 2,
+          "id": "usage"
+        },
+        {
+          "title": "Examples",
+          "depth": 2,
+          "id": "examples"
+        }
+      ]
+    },
+    "datagenerator/datagenerator.html": {
+      "source": "docs/datagenerator/datagenerator.md",
+      "title": "Get Started - Project Gen42",
+      "pageTitle": "Get Started",
+      "slug": "datageneratordatagenerator",
+      "headings": [
+        {
+          "title": "Data generator",
+          "depth": 2,
+          "id": "data-generator"
+        },
+        {
+          "title": "Easy start",
+          "depth": 2,
+          "id": "easy-start"
+        },
+        {
+          "title": "Demographic history",
+          "depth": 2,
+          "id": "demographic-history"
+        },
+        {
+          "title": "Generator",
+          "depth": 2,
+          "id": "generator"
+        }
+      ]
+    },
+    "utility/utility.html": {
+      "source": "docs/utility/utility.md",
+      "title": "Get Started - Project Gen42",
+      "pageTitle": "Get Started",
+      "slug": "utilityutility",
+      "headings": [
+        {
+          "title": "Utility or additional funtional",
+          "depth": 2,
+          "id": "utility-or-additional-funtional"
+        }
+      ]
+    },
+    "development/development.html": {
+      "source": "docs/development/development.md",
+      "title": "Get Started - Project Gen42",
+      "pageTitle": "Get Started",
+      "slug": "developmentdevelopment"
+    }
+  },
+  "sources": {
+    "README.md": "index.html",
+    "docs/showcase.md": "showcase.html",
+    "docs/getting-started/quickstart.md": "getting-started/quickstart.html",
+    "docs/datagenerator/datagenerator.md": "datagenerator/datagenerator.html",
+    "docs/utility/utility.md": "utility/utility.html",
+    "docs/development/development.md": "development/development.html"
+  }
+}
